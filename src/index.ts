@@ -4,6 +4,8 @@ import cors from 'cors';
 require('dotenv').config();
 
 import songs from './routes/song';
+import stats from './routes/stats';
+
 import errorHandler from './middlewares/errorHandler';
 import rateLimit from 'express-rate-limit';
 
@@ -41,6 +43,7 @@ app.get('/test', (req: Request, res: Response) => {
 
 // ROUTES
 app.use('/api/v1/songs', songs);
+app.use('/api/v1/stats', stats);
 
 
 app.listen(PORT, () => {
